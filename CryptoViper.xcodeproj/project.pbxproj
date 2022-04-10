@@ -70,8 +70,8 @@
 				E8B5635228035A6A000E04F2 /* View.swift */,
 				E8B5635428035A76000E04F2 /* Interactor.swift */,
 				E8B5635628035A81000E04F2 /* Presenter.swift */,
-				E8B5635A28035A87000E04F2 /* Router.swift */,
 				E8B5635828035A84000E04F2 /* Entity.swift */,
+				E8B5635A28035A87000E04F2 /* Router.swift */,
 			);
 			path = CryptoViper;
 			sourceTree = "<group>";
