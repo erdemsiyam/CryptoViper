@@ -24,15 +24,22 @@ protocol AnyPresenter {
 
 class CryptoPresenter : AnyPresenter {
     var router: AnyRouter?
-    var interactor: AnyInteractor?
+    var interactor: AnyInteractor? {
+        didSet {
+            // didSet : Atama işlemi yapıldığında
+            interactor?.downloadCryptos() // kriptolar çekilir
+        }
+    }
     var view: AnyView?
     
     func interactorDidDownloadCryptos(result: Result<[Crypto], Error>) {
         switch result {
             case .success(let cryptos):
-                // view.update
+                view?.update(with: cryptos)
+                break
             case .failure(let error):
-                // view.update_error
+                view?.update(with: error.localizedDescription)
+                break
         }
     }
 }
